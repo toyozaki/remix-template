@@ -1,0 +1,3 @@
+{
+  "extends": ["@remix-run/eslint-config", "plugin:tailwindcss/recommended", "prettier"]
+}
