@@ -1,24 +1,23 @@
+import { Link } from 'remix'
+
+import { Copyright } from '~/components'
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a target="_blank" href="https://remix.run/tutorials/blog" rel="noreferrer">
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/tutorials/jokes" rel="noreferrer">
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+    <div className="flex flex-col flex-1 bg-blue-200">
+      <main className="flex flex-col flex-1 justify-center">
+        <div>
+          <h1 className="text-6xl font-bold text-center text-white underline">
+            <Link to="/todo" prefetch="intent">
+              Manage your todo🏃
+            </Link>
+          </h1>
+        </div>
+      </main>
+
+      <footer className="flex flex-row justify-center">
+        <Copyright className="p-2 text-white" />
+      </footer>
     </div>
   )
 }

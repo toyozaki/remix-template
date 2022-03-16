@@ -6,3 +6,8 @@ node_modules
 .env
 
 /app/tailwind.css
+
+# prisma
+dev.db
+*.sql
+migration_lock.toml

@@ -1,7 +1,8 @@
 import { Links, LinksFunction, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from 'remix'
-import type { MetaFunction } from 'remix'
 
 import styles from './tailwind.css'
+
+import type { MetaFunction } from 'remix'
 
 export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: styles }]
@@ -20,7 +21,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="w-screen h-screen">
+      <body className="flex overscroll-none flex-col w-screen h-screen">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
