@@ -1,3 +1,58 @@
 {
-  "extends": ["@remix-run/eslint-config", "plugin:tailwindcss/recommended", "prettier"]
+  "extends": ["@remix-run/eslint-config", "plugin:tailwindcss/recommended", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "import", "unused-imports"],
+  "rules": {
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          ["internal", "sibling", "parent", "index"],
+          "object",
+          "type"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true,
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    // enable only member import
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "ignoreMemberSort": false,
+        "allowSeparatedGroups": true
+      }
+    ],
+    "no-unused-vars": "off",
+    // or "@typescript-eslint/no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "settings": {
+    "import/internal-regex": "^~"
+  }
 }
